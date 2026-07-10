@@ -1,0 +1,16 @@
+{
+    "job_name": "2026-07-10__11-42-22",
+    "agents": [
+        {
+            "name": "nop"
+        }
+    ],
+    "datasets": [
+        {
+            "path": "C:\\dynamo",
+            "task_names": [
+                "log-report"
+            ]
+        }
+    ]
+}

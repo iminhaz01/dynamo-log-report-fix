@@ -1,0 +1,66 @@
+/tests/test.sh: line 1: ﻿#!/bin/bash: No such file or directory
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 3 items
+
+../tests/test_outputs.py FFF                                             [100%]
+
+=================================== FAILURES ===================================
+_____________________________ test_total_requests ______________________________
+
+    def test_total_requests():
+        """Verifies instruction.md criterion 1: total_requests is an integer count of all non-empty log lines."""
+>       actual = _load_report()
+                 ^^^^^^^^^^^^^^
+
+/tests/test_outputs.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _load_report():
+        """Shared helper: loads report.json, failing with a clear message if missing or invalid."""
+        if not REPORT_PATH.exists():
+>           raise AssertionError("no report.json found at /app/report.json")
+E           AssertionError: no report.json found at /app/report.json
+
+/tests/test_outputs.py:13: AssertionError
+_______________________________ test_unique_ips ________________________________
+
+    def test_unique_ips():
+        """Verifies instruction.md criterion 2: unique_ips is an integer count of distinct client IP addresses."""
+>       actual = _load_report()
+                 ^^^^^^^^^^^^^^
+
+/tests/test_outputs.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _load_report():
+        """Shared helper: loads report.json, failing with a clear message if missing or invalid."""
+        if not REPORT_PATH.exists():
+>           raise AssertionError("no report.json found at /app/report.json")
+E           AssertionError: no report.json found at /app/report.json
+
+/tests/test_outputs.py:13: AssertionError
+________________________________ test_top_path _________________________________
+
+    def test_top_path():
+        """Verifies instruction.md criterion 3: top_path is the most frequently requested path."""
+>       actual = _load_report()
+                 ^^^^^^^^^^^^^^
+
+/tests/test_outputs.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _load_report():
+        """Shared helper: loads report.json, failing with a clear message if missing or invalid."""
+        if not REPORT_PATH.exists():
+>           raise AssertionError("no report.json found at /app/report.json")
+E           AssertionError: no report.json found at /app/report.json
+
+/tests/test_outputs.py:13: AssertionError
+=========================== short test summary info ============================
+FAILED ../tests/test_outputs.py::test_total_requests - AssertionError: no rep...
+FAILED ../tests/test_outputs.py::test_unique_ips - AssertionError: no report....
+FAILED ../tests/test_outputs.py::test_top_path - AssertionError: no report.js...
+============================== 3 failed in 0.03s ===============================
